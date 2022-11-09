@@ -4,7 +4,7 @@ from pickle import TRUE
 import requests
 import re
 
-albumi_url = r'https://github.com/JasaPavcic/Najboljsi-svetovni-albumi.git'
+albumi_url = r'https://www.rollingstone.com/music/music-lists/best-albums-of-all-time-1062063/'
 ime_file = '500_najboljših_albumov.html'
 ime_mape = 'Albumi'
 
@@ -50,8 +50,7 @@ def preberi_file(ime_mape, ime_file):
 
 
 def razčleni_stran(stran):
-    rx = re.compile(r'.*<div class=".*',
-                    re.DOTALL)
+    rx = re.compile(r'<div class="c',re.DOTALL)
     album = re.findall(rx,stran)
     return album
 
